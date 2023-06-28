@@ -1,0 +1,62 @@
+*, *::before, *::after {
+    box-sizing: border-box
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  .thing-to-get-pop-up {
+    width: 100px;
+    height: 100px;
+    /* border-radius: 50%; */
+    background-image: url('https://picsum.photos/id/237/200/300');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .thing-to-get-pop-up::before,
+  .thing-to-get-pop-up::after {
+    --scale: 0;
+    --arrow-size: 5px;
+    --tooltip-color: rgb(138, 63, 171);
+  
+    position: absolute;
+    top: -.25rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));
+    transition: 45ms transform;
+    transform-origin: bottom center;
+  }
+  
+  .thing-to-get-pop-up::before {
+    --translate-y: calc(-100% - var(--arrow-size));
+  
+    content: attr(data-tooltip);
+    color: white;
+    padding: .5rem;
+    border-radius: .3rem;
+    text-align: center;
+    width: max-content;
+    max-width: 300%;
+    background: var(--tooltip-color);
+  }
+  
+  .thing-to-get-pop-up:hover::before,
+  .thing-to-get-pop-up:hover::after {
+    --scale: 1;
+  }
+  
+  .thing-to-get-pop-up::after {
+    --translate-y: calc(-1 * var(--arrow-size));
+  
+    content: '';
+    border: var(--arrow-size) solid transparent;
+    border-top-color: var(--tooltip-color);
+    transform-origin: top center;
+  }
