@@ -5,19 +5,19 @@
 
 .light {
     --navbar-norm: #aeaeaeee;
-    --navbar-hover: #eeee;
-    --navbar-bg: #000000ee;
+    --navbar-hover: #ffffffee;
+    --navbar-bg: #121212;
     --text: #242424ee;
-    --text-bg: #eeee;
+    --text-bg: #f3f0ddee;
     --scrollbar: #6e235f;
 }
 
 .dark {
-    --navbar-norm: #e5e5e5ee;
-    --navbar-hover: #c4c4c4ee;
-    --navbar-bg: #5a5a5aee;
-    --text: #eaeaeaee;
-    --text-bg: #0e0e0eee;
+    --navbar-norm: #b6b5b5ee;
+    --navbar-hover: #9c9c9cee;
+    --navbar-bg: #121212;
+    --text: #cfcfcfee;
+    --text-bg: #000000ee;
     --scrollbar: #6e235f;
 }
 

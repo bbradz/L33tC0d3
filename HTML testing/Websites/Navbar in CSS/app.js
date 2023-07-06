@@ -1,10 +1,11 @@
-const button = document.getElementById("color-changer");
+const button = document.getElementById("light");
 const body = document.body;
 
-    if (body.classlist.contains('light')) {
-        body.classlist.replace('light', 'dark');
+button.onclick = () => {
+    if (body.classList.contains('light')) {
+        body.classList.replace('light','dark');
     }
     else {
-        body.classlist.replace('dark', 'light');
+        body.classList.replace('dark','light');
     }
-
+}
