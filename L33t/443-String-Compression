@@ -1,0 +1,38 @@
+class Solution(object):
+    def compress(chars):
+        """
+        :type chars: List[str]
+        :rtype: int
+        """
+
+        charMap = {}
+        order = ""
+        for i in range(len(chars)):
+            if chars[i] in charMap:
+                charMap[str(chars[i])]+=1
+            else:
+                charMap[str(chars[i])]=1
+                order+=str(chars[i])
+
+        chars = []
+        for i in range(len(order)):
+            count = charMap[order[i]]
+            if count==1:
+                chars.append(order[i])
+            if (count<10 and count!=1):
+                chars.append(order[i])
+                chars.append(str(count))
+            if (count<100 and count>10 and count!=1):
+                chars.append(order[i])
+                rem = count % 10
+                count = count - rem
+                count = int(count/10)
+                chars.append(str(count))
+                chars.append(str(rem))
+        
+        return chars
+    
+    a = ["a","a","b","b","c","c","c"]
+    chars = compress(a)
+    print(chars)
+    

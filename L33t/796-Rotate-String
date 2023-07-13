@@ -1,0 +1,13 @@
+class Solution(object):
+    def rotateString(self, s, goal):
+        """
+        :type s: str
+        :type goal: str
+        :rtype: bool
+        """
+        length = len(s)
+        for i in range(length):
+            s = s[1:length]+s[0]
+            if s==goal:
+                return True
+        return False
